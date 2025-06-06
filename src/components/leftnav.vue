@@ -3,22 +3,21 @@
 
 <template>
     <div class="leftnavbar">
-        <label for="initial">JLC</label><br>
         <div class="btn-container">
             <input type="radio" id="home" name="menu">
-            <label for="home" class="right-nav-btn">Home</label>
+            <label for="home" class="left-nav-btn">Home</label>
             <br>
             <input type="radio" id="about-me" name="menu">
-            <label for="about-me" class="right-nav-btn">About Me</label>
+            <label for="about-me" class="left-nav-btn">About Me</label>
             <br>
             <input type="radio" id="projects" name="menu">
-            <label for="projects" class="right-nav-btn">Projects</label>
+            <label for="projects" class="left-nav-btn">Projects</label>
             <br>
             <input type="radio" id="work-exp" name="menu">
-            <label for="work-exp" class="right-nav-btn">Work Experience</label>
+            <label for="work-exp" class="left-nav-btn">Experience</label>
             <br>
             <input type="radio" id="contact" name="menu">
-            <label for="contact" class="right-nav-btn">Contacts</label>
+            <label for="contact" class="left-nav-btn">Contact Me</label>
         </div>
     </div>
 </template>
@@ -28,49 +27,57 @@
     position: fixed;
     left: 0;
     top: 0;
+    bottom: 0;
     display: auto;
     background-color: black;
-    height: 960px;
+    height: auto;
     width: 285px;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: left;
-}
-.btn-container{
-    display: flex;
+    align-items: center;
+    justify-content: flex;
 }
 
-.right-nav-btn {
-    display: block; /* Makes them stack vertically */
-    width: 100%; /* Full width of the navbar */
-    background-color: #2c3e50; /* Button color */
-    color: white; /* Text color */
-    padding: 15px; /* Space inside button */
-    text-align: center; /* Center text */
-    font-size: 18px; /* Text size */
+.btn-container{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;  
+}
+
+.left-nav-btn {
+    width: 50%;
+    display: block; 
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
     font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: background 0.3s ease;
+    border-radius: 20px;
+    transition: ease, 0.7s;
 }
 
-.right-nav-btn:hover {
-    background-color: #34495e; /* Darker shade */
+.left-nav-btn:hover {
+    background-color: white;
+    color:black;
+    width: 50%;
+    border-radius: 20px;
 }
 
-/* Selected effect */
-input[type="radio"]:checked + .right-nav-btn {
-    background-color: #1abc9c; /* Highlighted selection */
+input[type="radio"]:checked + .left-nav-btn {
+    background-color: #ffffff80;
+    width: 50%;
+    border-radius: 20px;
 }
 
-/* Align the buttons */
 .btn-container {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 10px; /* Add spacing between buttons */
+    flex-direction: column;
+    gap: 10px;
 }
 input[type="radio"] {
-    display: none; /* Completely hides the radio buttons */
+    display: none;
 }
 
 </style>
