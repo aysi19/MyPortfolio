@@ -67,7 +67,8 @@
 }
 
 input[type="radio"]:checked + .left-nav-btn {
-    background-color: #ffffff80;
+    background-color: white;
+    color: black;
     width: 50%;
     border-radius: 20px;
 }

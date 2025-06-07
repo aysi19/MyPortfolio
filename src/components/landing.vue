@@ -9,11 +9,21 @@
         <p class="txt-hi">Hi there,</p>
         <p class="txt-josh">I am Josh Lendl Cagara</p>
       </div>
-      <br>
+
+      <div class="logo-container">
+        <font-awesome-icon :icon="['fab', 'facebook']" size="2x"/>
+        <font-awesome-icon :icon="['fab', 'instagram']" size="2x"/>
+        <font-awesome-icon :icon="['fab', 'github']" size="2x"/>
+        <font-awesome-icon :icon="['fab', 'linkedin']" size="2x"/>
+        <font-awesome-icon :icon="['far', 'envelope']" size="2x"/>
+        </div>
+
       <a href="Resume2.pdf" download class="download-btn">
         Download CV
       </a>
+
     </div>
+    
 
     <div class="picture-container">
       <!-- Add image or other content here -->
@@ -47,6 +57,7 @@
 .txt-hi,.txt-josh{
     display: block;
     font-size: 50px;
+    font: bold;
 }
 .download-btn {
     width: 20%;
@@ -75,6 +86,13 @@ input[type="radio"]:checked + .download-btn {
     color: white;
     width: 20%;
     border-radius: 20px;
+}
+.logo-container{
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 50px;
+    
 }
 
 </style>
