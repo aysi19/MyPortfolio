@@ -1,24 +1,24 @@
 <script setup>
+    
 </script>
 
 <template>
-
-    <div class="content-container">
-        <div class="txt-container">
-            <div class="text-inner">
-                <p class="txt-hi">Hi there,</p>
-                <p class="txt-josh">I am Josh Lendl Cagara</p>
-            </div>
-            <br>
-            <input type="radio" id="dl-cv" name="dl-btn">
-            <label for="dl-cv" class="download-btn">Download CV</label>
-        </div>
-
-        <div class="picture-container">
-
-        </div>
+  <div class="content-container">
+    <div class="txt-container">
+      <div class="text-inner">
+        <p class="txt-hi">Hi there,</p>
+        <p class="txt-josh">I am Josh Lendl Cagara</p>
+      </div>
+      <br>
+      <a href="Resume2.pdf" download class="download-btn">
+        Download CV
+      </a>
     </div>
 
+    <div class="picture-container">
+      <!-- Add image or other content here -->
+    </div>
+  </div>
 </template>
 
 <style>
@@ -44,7 +44,7 @@
     flex-direction: column;
     align-items: center;
 }
-.txt-hi,.txt-josh, .download-btn{
+.txt-hi,.txt-josh{
     display: block;
     font-size: 50px;
 }
