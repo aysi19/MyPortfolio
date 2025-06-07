@@ -20,6 +20,7 @@
             <label for="contact" class="left-nav-btn">Contact Me</label>
         </div>
     </div>
+
 </template>
 
 <style>
