@@ -1,13 +1,35 @@
 <script setup>
-    
+import pic2 from '@/assets/longpic.jpg'
+import { ref, onMounted } from 'vue'
+
+const hiText = ref('')
+const iAmText = ref('')
+const nameText = ref('')
+
+const fullHiText = 'Hi there,'
+const fullIAmText = 'I am '
+const fullNameText = 'Josh Lendl Cagara'
+
+const typeText = async (fullText, refVar, delay = 100) => {
+  for (let i = 0; i < fullText.length; i++) {
+    await new Promise(resolve => setTimeout(resolve, delay))
+    refVar.value += fullText[i]
+  }
+}
+
+onMounted(async () => {
+  await typeText(fullHiText, hiText, 100)
+  await typeText(fullIAmText, iAmText, 100)
+  await typeText(fullNameText, nameText, 100)
+})
 </script>
 
 <template>
   <div class="content-container">
     <div class="txt-container">
       <div class="text-inner">
-        <p class="txt-hi">Hi there,</p>
-        <p class="txt-josh">I am Josh Lendl Cagara</p>
+        <p class="txt-hi">{{ hiText }}</p>
+        <p class="txt-josh">{{ iAmText }}<span class="josh">{{ nameText }}</span></p>
       </div>
 
       <div class="logo-container">
@@ -21,19 +43,21 @@
       <a href="Resume2.pdf" download class="download-btn">
         Download CV
       </a>
-
     </div>
-    
 
-    <div class="picture-container">
-      <!-- Add image or other content here -->
+    <div class="pic-container">
+      <img :src="pic2" alt="My Picture" class="profile-pic">
     </div>
+
   </div>
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Carter+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sofia+Sans:ital,wght@0,1..1000;1,1..1000&display=swap');
 
 .content-container{
+    flex-direction: row;
     position: fixed;
     top: 0;
     left: 285px;
@@ -57,7 +81,12 @@
 .txt-hi,.txt-josh{
     display: block;
     font-size: 50px;
-    font: bold;
+    font-family: 'SofiaSans', sans-serif;
+}
+.josh{
+    font-size: 50px;
+    font-weight: 400;
+    font-family: 'Carter One', cursive;
 }
 .download-btn {
     width: 20%;
@@ -93,6 +122,31 @@ input[type="radio"]:checked + .download-btn {
     display: flex;
     gap: 50px;
     
+}
+.pic-container{
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 25%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+.profile-pic{
+    border-radius: 300px;
+    border: solid black 2px;
+    box-shadow: 0 4px 50px rgba(0, 0, 0, 0.5);
+}
+.typing-text::after {
+  content: '|';
+  animation: blink 1s steps(1) infinite;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  50%{
+    opacity: 0;
+  }
 }
 
 </style>
