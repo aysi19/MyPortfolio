@@ -11,7 +11,7 @@
             <label for="about-me" class="left-nav-btn">About Me</label>
             <br>
             <input type="radio" id="projects" name="menu">
-            <label for="projects" class="left-nav-btn">Projects</label>
+            <label for="projects" class="left-nav-btn">Education</label>
             <br>
             <input type="radio" id="work-exp" name="menu">
             <label for="work-exp" class="left-nav-btn">Experience</label>

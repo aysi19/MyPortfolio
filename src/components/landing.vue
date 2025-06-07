@@ -4,7 +4,19 @@
 <template>
 
     <div class="content-container">
+        <div class="txt-container">
+            <div class="text-inner">
+                <p class="txt-hi">Hi there,</p>
+                <p class="txt-josh">I am Josh Lendl Cagara</p>
+            </div>
+            <br>
+            <input type="radio" id="dl-cv" name="dl-btn">
+            <label for="dl-cv" class="download-btn">Download CV</label>
+        </div>
 
+        <div class="picture-container">
+
+        </div>
     </div>
 
 </template>
@@ -19,10 +31,50 @@
     bottom: 0;
     background-color: white;
     display: flex;
-    align-items: center;
-    justify-content: center;
     width: calc(100% - 285px);
-    padding: 20px;
+}
+.txt-container{
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 285px;
+    width: calc(75% - 285px);
+    background-color: white;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+}
+.txt-hi,.txt-josh, .download-btn{
+    display: block;
+    font-size: 50px;
+}
+.download-btn {
+    width: 20%;
+    display: block; 
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 4px solid black;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: ease, 0.7s;
+}
+
+.download-btn:hover {
+    background-color: black;
+    color:white;
+    width: 20%;
+    border-radius: 20px;
+}
+
+input[type="radio"]:checked + .download-btn {
+    background-color: black;
+    color: white;
+    width: 20%;
+    border-radius: 20px;
 }
 
 </style>
